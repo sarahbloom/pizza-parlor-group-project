@@ -1,14 +1,15 @@
-#$ React Pizza Parlor Group Project
+#### React Pizza Parlor Group Project
 
 This application was a daily group project created with React, Redux, sagas, SQL, Express, and Node.js.
 
-## Prerequisites
+#### Prerequisites
 
 Link to software that is required to install the app (e.g. node).
 
 - [Node.js](https://nodejs.org/en/)
 - [postgresql](https://www.postgresql.org/download/)
-## Setup Instructions
+
+### Setup Instructions
 
 * Run `npm install`
 * Run `npm run server`
@@ -69,12 +70,12 @@ Features that you would like to add at some point in the future.
 - [ ] Add a button on the orders page to track delivery status.
 - [ ] Give each pizza an image url and add pictures to the `public/images` folder.
 
-## Authors
+### Authors
 
 * Sarah Bloom
 * Ian Carthey
 * Teagan Nouska
 
-## Acknowledgments
+### Acknowledgments
 
 * Thanks to PrimeAcademy for the base project
