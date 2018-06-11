@@ -1,71 +1,25 @@
-# React Pizza Parlor
+#$ React Pizza Parlor Group Project
 
-Before you get started make sure to read through **ALL** requirements and outline a plan for your group. Assign out tasks and use branches to allow team members to work in parallel.
+This application was a daily group project created with React, Redux, sagas, SQL, Express, and Node.js.
 
-> HINT: Start with your `/api/pizza` GET route to give client side developers something to work with.
+## Prerequisites
 
-### Setup
+Link to software that is required to install the app (e.g. node).
 
-Create your database and tables using the provided `data.sql` file. Start the server.
+- [Node.js](https://nodejs.org/en/)
+- [postgresql](https://www.postgresql.org/download/)
+## Setup Instructions
 
-```
-npm install
-npm run server
-```
+* Run `npm install`
+* Run `npm run server`
+* Open a new terminal tab and run `npm run client`
+* You should be automatically directed to `localhost:3000`. If not, navigate to `localhost:3000`.
 
-Now that the server is running, open a new terminal tab with `cmd + t` and start the react client app.
+### Create the Database and Tables with PostgreSQL
 
-```
-npm run client
-```
+Create a new database called `pizza_parlor` and two tables: `pizza` and `order`. 
 
-## BASE REQUIREMENTS
-
-Your client has asked your team to build a pizza ordering system. They have provided a list of pizzas they currently offer in SQL format (`data.sql`). Your team should build out the following views.
-
-### MENU
-
-Display all of the pizzas on the screen. Allow users to increase or decrease the quantity of each pizza they would like to order. Show the total cost of items in the cart in the top right of this page.
-
-![menu page](wireframes/pizza-menu.png)
-
-### CHECKOUT
-
-Include an input field for the users name and display a table of pizzas they have added to the cart. Users should not be able to modify item totals on this screen. When they click checkout, the users *name* and *order total* should be sent to the server and saved in the database.
-
-> NOTE: **As a stretch goal**, add a junction table and save each pizza that has been added to the order. 
-
-![checkout page](wireframes/pizza-order.png)
-
-### ORDERS
-
-This page **should not** appear in the navigation bar. Eventually the client would like to add authentication but for now, it will be available to anyone with the url [http://localhost:3000/orders](http://localhost:3000/orders). This page will display the name, time and order total for each of the orders placed.
-
-> NOTE: **Base mode** does not require a JOIN. Just show all records from the orders table.
-
-![orders page](wireframes/screen-three.png)
-
-
-## STRETCH GOALS
-
-- Create a new route that allows admins to add pizzas [http://localhost:3000/admin](http://localhost:3000/admin).
-- Improve the stying of the app using Material-UI cards, buttons, nav bar and icons.
-- Create a junction table and keep track of which pizzas are added to each order.
-- Display a list of pizzas for each order on the orders page. 
-- Add a button on the orders page to track delivery status.
-- Give each pizza an image url and add pictures to the `public/images` folder.
-
-# Name of Project
-
-Pizza Parlor Group Project
-
-## Built With
-
-axios, material-ui, pg, react, redux
-
-## Getting Started
-
-```sql
+```SQL
 CREATE DATABASE "pizza_parlor";
 
 CREATE TABLE "pizza" (
@@ -80,58 +34,29 @@ CREATE TABLE "order" (
   "customer_name" varchar(120),
   "order_total" numeric
 );
-```
+
+INSERT INTO "pizza" ("name", "description", "cost")
+VALUES ('Splat of Marinara', 'Cheeseless pizza with marinara, garlic and red peppers.', 12.99),
+('Onamonapizza', 'Cheese, BBQ sauce and artichokes.', 14.99),
+('Pepperoni', 'Classic pizza with cheese and pepperoni. Baked with a traditional crust in our brick oven.', 14.99),
+('Over the Rainbow', 'One ingredient of each color: pepperoni, doritos, pineapple, olives, cheese, peppers and onion.', 19.99),
+('Chinese Firedragon', 'Pepperoni, pineapple and banana peppers.', 15.99),
+('Bad Date', 'Garlic, Onion and Pepperoni.', 24.99);
 
 ```
-npm install
-npm run server
-```
 
-Now that the server is running, open a new terminal tab with `cmd + t` and start the react client app.
+### MENU
 
-```
-npm run client
-```
+On this page, a user will see all pizza options. They can add pizzas to the order by clicking the "+" button. If they would like to deselect a pizza, they can click the "-" button. The number of each type of pizza in the order will display between the two buttons.
 
-### Prerequisites
+![menu page](wireframes/pizza-menu.png)
 
-Link to software that is required to install the app (e.g. node).
+### CHECKOUT
 
-- [Node.js](https://nodejs.org/en/)
-- [postgresql](https://www.postgresql.org/download/)
+On this page, a user will enter their name. They will be able to see all pizzas included in the order and see the total cost. If the order looks correct, the user will submit the order. If any changes are necessary, the user will navigate back to the menu page to edit the order.
 
+![checkout page](wireframes/pizza-order.png)
 
-
-### Installing
-
-Steps to get the development environment running.
-
-
-
-
-## Screen Shot
-
-<!-- will be added later ![menu page](wireframes/screen-one.png) -->
-
-## Documentation
-
-- [Node.js](https://nodejs.org/en/)
-- [React.js](https://reactjs.org/)
-- [postgresql](https://www.postgresql.org/docs/)
-- [material-ui-next](https://material-ui-next.com/)
-
-
-### Completed Features
-
-High level list of items completed.
-
-- [x] Get route to database
-- [x] Post route to database
-- [x] sagas implemented
-- [x] logger implemented
-- [x] reudx implemented
-- [x] database data appearing on DOM
-- [ ] Post to database from client
 
 ### Next Steps
 
@@ -139,17 +64,16 @@ Features that you would like to add at some point in the future.
 
 - [ ] Be able to create users and place orders by user.
 - [ ] Save past orders per user.
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
+- [ ] Create a new route that allows admins to add pizzas [http://localhost:3000/admin].
+- [ ] Create a junction table and keep track of which pizzas are added to each order.
+- [ ] Add a button on the orders page to track delivery status.
+- [ ] Give each pizza an image url and add pictures to the `public/images` folder.
 
 ## Authors
 
 * Sarah Bloom
 * Ian Carthey
 * Teagan Nouska
-
 
 ## Acknowledgments
 
